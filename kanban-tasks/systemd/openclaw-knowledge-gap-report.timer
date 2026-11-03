@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenClaw knowledge gap-report daily timer (F2 cross-project audit)
+
+[Timer]
+OnCalendar=*-*-* 08:00:00 America/Sao_Paulo
+RandomizedDelaySec=10min
+Persistent=true
+AccuracySec=1min
+Unit=openclaw-knowledge-gap-report.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=OpenClaw cron-dispatcher (auto-dispatch ready, wave-4)
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.openclaw/dispatcher-agent/cli.sh cron-tick --once
+Nice=10

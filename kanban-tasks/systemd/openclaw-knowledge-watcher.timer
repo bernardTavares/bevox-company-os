@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw knowledge watcher timer (hourly cross-project audit)
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=1h
+RandomizedDelaySec=5min
+Persistent=true
+AccuracySec=1min
+Unit=openclaw-knowledge-watcher.service
+
+[Install]
+WantedBy=timers.target

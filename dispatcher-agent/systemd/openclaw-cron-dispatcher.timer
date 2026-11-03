@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenClaw cron-dispatcher timer (300s tick, wave-4)
+
+[Timer]
+OnBootSec=60s
+OnUnitActiveSec=300s
+AccuracySec=10s
+Unit=openclaw-cron-dispatcher.service
+
+[Install]
+WantedBy=timers.target

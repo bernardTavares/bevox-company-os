@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenClaw knowledge retirement-scan weekly timer (F4)
+
+[Timer]
+OnCalendar=Sun *-*-* 09:00:00 America/Sao_Paulo
+RandomizedDelaySec=15min
+Persistent=true
+AccuracySec=1min
+Unit=openclaw-knowledge-retirement.service
+
+[Install]
+WantedBy=timers.target

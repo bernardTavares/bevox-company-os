@@ -1,0 +1,23 @@
+# E9 wave 2 — Cost alerts override (HOST-LOCAL, NUNCA COMMITADO).
+#
+# Threshold real do Bernard. Substituir manualmente quando contexto
+# mudar (mes novo, projeto novo, cliente novo). Apos editar, o
+# proximo tick natural (~1h) propaga sem redeploy. Pra validar
+# imediato:
+#   systemctl --user start openclaw-cost-alert-check.service
+#
+# PLACEHOLDER ATUAL: 5.00 USD.
+# Razao: today_cost_usd ~3.89 USD nao dispara imediato; valor
+# acima do uso de teste atual, abaixo de uso medio mensal real.
+# Substituir por threshold real da Bevox quando a politica
+# financeira estiver definida. O threshold atual nao representa
+# policy financeira real.
+#
+# Shape canonico (matches bevox-knowledge/20_architecture/cost-alerts.example.yml):
+#   daily_threshold_usd: float — limite de gasto diario em USD
+#   enabled: bool — opcional, default true
+#
+# Spec: bevox-knowledge/35_specs/2026-04-15-e9-cost-usage-wave-2.md §4.1.2
+
+daily_threshold_usd: 5.00
+enabled: true

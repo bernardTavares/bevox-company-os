@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw knowledge watcher (F1 commit-watcher cross-project audit)
+After=default.target
+OnFailure=openclaw-cron-alerter@%n.service
+OnFailureJobMode=replace-irreversibly
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.openclaw/gateway/bots/knowledge.env
+ExecStart=%h/.openclaw/kanban-tasks/cli.sh knowledge audit
+Nice=10
+StandardOutput=journal
+StandardError=journal

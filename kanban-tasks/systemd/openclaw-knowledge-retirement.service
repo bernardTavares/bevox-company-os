@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw knowledge retirement-scan (F4 obsolete doc detector, Sunday 09:00 BRT)
+After=default.target
+OnFailure=openclaw-cron-alerter@%n.service
+OnFailureJobMode=replace-irreversibly
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.openclaw/gateway/bots/knowledge.env
+ExecStart=%h/.openclaw/kanban-tasks/cli.sh knowledge retirement-scan --dispatch-telegram
+Nice=10
+StandardOutput=journal
+StandardError=journal

@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenClaw knowledge tune-suggest weekly timer (W8 feedback loop)
+
+[Timer]
+OnCalendar=Sun *-*-* 09:30:00 America/Sao_Paulo
+RandomizedDelaySec=10min
+Persistent=true
+AccuracySec=1min
+Unit=openclaw-knowledge-tune-suggest.service
+
+[Install]
+WantedBy=timers.target

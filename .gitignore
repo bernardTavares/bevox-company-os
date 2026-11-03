@@ -1,0 +1,85 @@
+# ========== DEPLOYS DE OUTROS REPOS (evitar duplicação) ==========
+# knowledge-sync (skill + plugins): source em ~/code/knowledge-sync/
+knowledge-sync/
+extensions/
+skills/knowledge-sync/
+
+# ========== WORKSPACES (runtime shallow ou com git próprio) ==========
+workspace/
+workspace-*/
+bevox-mobile/
+# exceção: memory compartilhado É source (não runtime)
+!workspace-shared/
+!workspace-shared/**
+# exceção: templates de workspace SÃO source (usados pela project factory)
+!kanban-tasks/templates/workspace/
+!kanban-tasks/templates/workspace/**
+!workspace-template/
+!workspace-template/**
+
+# ========== SECRETS ==========
+.env
+.env.*
+*.env
+.codex
+credentials/
+exec-approvals.json
+exec-approvals.sock
+*.token
+*.pem
+*.key
+
+# ========== RUNTIME STATE (derivado / append-only) ==========
+*/state.json
+*/state.previous.json
+*-state.json
+*.jsonl
+update-check.json
+*/test_runs/
+agents/
+cache/
+logs/
+memory/
+!workspace-shared/memory/
+!kanban-tasks/templates/workspace/memory/
+!kanban-tasks/templates/workspace/memory/**
+!workspace-template/memory/
+!workspace-template/memory/**
+delivery-queue/
+cron/data/
+cron/*.sock
+exec-approvals/
+*/executions/
+snapshot-cron/
+self-test-evidence/
+tasks/
+*/latest.marker
+*/latest.json
+
+# ========== VIRTUALENVS E BUILD ==========
+venvs/
+*-venv/
+__pycache__/
+*.pyc
+
+# ========== BACKUPS, LOGS, SQLITE ==========
+backups/
+*.bak
+*.bak.*
+*.pre-*
+*.log
+*.sqlite
+*.sqlite-*
+*.db
+*.db-shm
+*.db-wal
+
+# ========== DEVICE IDENTITY (runtime) ==========
+identity/device-auth.json
+
+# ========== LIXO DE SO ==========
+.DS_Store
+Thumbs.db
+*.swp
+*~
+cron/jobs.json

@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenClaw Clarification Notifier (Telegram push) — E10/OH wave-2
+After=openclaw-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.openclaw/clarification-agent
+ExecStart=%h/.openclaw/clarification-agent/notifier.sh --tick
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=60

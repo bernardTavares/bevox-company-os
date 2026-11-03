@@ -1,0 +1,48 @@
+# E11 wave 1 — Finance snapshot override (HOST-LOCAL, NUNCA COMMITADO).
+#
+# Este arquivo carrega os valores financeiros reais da Bevox.
+# Substitua os placeholders abaixo pelos numeros reais antes de rodar
+# o runner em producao. Enquanto estiver com placeholders, o runner
+# ainda funciona — e apenas a semantica dos numeros que fica ficticia.
+#
+# Shape canonico (matches bevox-knowledge/20_architecture/finance-snapshot.example.yml):
+#
+# Campos obrigatorios:
+#   as_of:           date (YYYY-MM-DD) — quando voce atualizou por ultimo
+#   usd_brl:         float — taxa manual USD→BRL pra converter custo E9
+#   cash_on_hand_brl: number — saldo bancario atual em BRL
+#   mrr_brl:         number — MRR atual em BRL (pode ser 0 se nao monetizando)
+#
+# Lista recurring_costs_brl (≥3 entries pro DoD §7.3):
+#   - name:       string obrigatorio
+#     category:   string livre obrigatorio (infra, saas, services, people, tools, ...)
+#     amount_brl: number obrigatorio
+#     notes:      string opcional
+#
+# Apos editar, o runner hourly pega as mudancas no proximo tick
+# (ou force um run manual via:
+#   systemctl --user start openclaw-finance-snapshot.service)
+#
+# Spec: bevox-knowledge/35_specs/2026-04-14-e11-finance-runway-wave-1.md §4.1.2
+
+as_of: 2026-04-17
+usd_brl: 5.12  # PLACEHOLDER — ajuste pra taxa real
+
+cash_on_hand_brl: 1000  # PLACEHOLDER — substitua pelo saldo real
+mrr_brl: 0                # PLACEHOLDER — substitua pelo MRR real (0 se ainda nao monetizando)
+
+recurring_costs_brl:
+  - name: "PLACEHOLDER — Server/infra"
+    category: infra
+    amount_brl: 25
+    notes: "google"
+
+  - name: "PLACEHOLDER — SaaS essencial"
+    category: saas
+    amount_brl: 200
+    notes: "substitua por GitHub/Notion/1Password/etc"
+
+  - name: "PLACEHOLDER — Servicos externos"
+    category: services
+    amount_brl: 300
+    notes: "substitua por contador/juridico/dominio/etc"

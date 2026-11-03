@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw knowledge tune-suggest (W8 feedback loop weekly analyzer)
+After=default.target
+OnFailure=openclaw-cron-alerter@%n.service
+OnFailureJobMode=replace-irreversibly
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.openclaw/gateway/bots/knowledge.env
+ExecStart=%h/.openclaw/kanban-tasks/cli.sh knowledge tune-suggest --dispatch-telegram
+Nice=10
+StandardOutput=journal
+StandardError=journal

@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw knowledge gap-report (F2 cross-project audit, daily 08:00 BRT)
+After=default.target
+OnFailure=openclaw-cron-alerter@%n.service
+OnFailureJobMode=replace-irreversibly
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.openclaw/gateway/bots/knowledge.env
+ExecStart=%h/.openclaw/kanban-tasks/cli.sh knowledge gap-report --all --dispatch-telegram
+Nice=10
+StandardOutput=journal
+StandardError=journal

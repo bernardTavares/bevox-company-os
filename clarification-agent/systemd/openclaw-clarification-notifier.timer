@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer — OpenClaw Clarification Notifier (60s default)
+
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+AccuracySec=5s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

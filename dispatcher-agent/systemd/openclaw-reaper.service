@@ -1,0 +1,8 @@
+[Unit]
+Description=OpenClaw dispatcher reaper (detached completion, wave-3.5)
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.openclaw/dispatcher-agent/cli.sh reap-detached --once
+Nice=5

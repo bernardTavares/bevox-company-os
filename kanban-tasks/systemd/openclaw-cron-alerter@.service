@@ -1,0 +1,9 @@
+[Unit]
+Description=Knowledge watcher cron failure alerter (target=%i)
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.openclaw/gateway/bots/knowledge.env
+ExecStart=%h/.openclaw/kanban-tasks/cli.sh knowledge cron-alert --target=%i
+StandardOutput=journal
+StandardError=journal

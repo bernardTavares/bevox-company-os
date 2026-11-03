@@ -1,0 +1,8 @@
+# kanban-tasks projects - HOST-LOCAL.
+# Editavel manualmente; rode `cli.sh rebuild` apos editar.
+# Adicionar via CLI: cli.sh project add <name>
+projects:
+  - openclaw
+  - mission-control
+  - example-backend
+  - example-web
