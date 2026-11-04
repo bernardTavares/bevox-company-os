@@ -8,9 +8,9 @@ An operating layer for a one-person AI company. Small supervised agents work as 
 
 Every step has a kill switch, automation is opt-in, and every mutation leaves an append-only audit trail.
 
-I built it from April to May 2026 to run development at **Bevox**, where it planned, dispatched and validated work across the company's own repos. The doctrine was **"Claude Code codes · OpenClaw operates · the knowledge base decides."**
+I built it in 2026 to run development at **Bevox**, where it planned, dispatched and validated work across the company's own repos. The doctrine was **"Claude Code codes · OpenClaw operates · the knowledge base decides."**
 
-> **Status:** a prototype that ran in production for internal operations and was paused when Bevox stopped. It sits on top of **[OpenClaw](https://openclaw.ai)**, the open-source self-hosted agent gateway, for Telegram, cron, agent sessions and plugins. OpenClaw itself is **not** part of this repo. Everything here is my own code, and it never patches the gateway core.
+> **Status:** a prototype that ran in production for Bevox's internal operations. It sits on top of **[OpenClaw](https://openclaw.ai)**, the open-source self-hosted agent gateway, for Telegram, cron, agent sessions and plugins. OpenClaw itself is **not** part of this repo. Everything here is my own code, and it never patches the gateway core.
 
 The read-side UI is a separate repo: **[bevox-mission-control](https://github.com/bernardTavares/bevox-mission-control)**.
 
