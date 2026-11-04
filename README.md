@@ -1,5 +1,11 @@
 # Bevox Company OS
 
+[![tests](https://img.shields.io/badge/tests-1%2C694%20passing-brightgreen)](#) [![license](https://img.shields.io/badge/license-FSL--1.1--MIT-blue)](./LICENSE.md) ![language](https://img.shields.io/github/languages/top/bernardTavares/bevox-company-os) ![status](https://img.shields.io/badge/status-ran%20internally-orange)
+
+![bevox-company-os](docs/assets/social-card.png)
+
+> Part of the [4-layer AI-first company series](https://github.com/bernardTavares). License: FSL-1.1-MIT (source-available, converts to MIT after 2 years)
+
 An operating layer for a one-person AI company. Small supervised agents work as a pipeline:
 1. they turn implementation plans into kanban tasks;
 2. they launch **headless Claude Code** sessions to execute those tasks;
@@ -8,7 +14,7 @@ An operating layer for a one-person AI company. Small supervised agents work as 
 
 Every step has a kill switch, automation is opt-in, and every mutation leaves an append-only audit trail.
 
-I built it in 2026 to run development at **Bevox**, where it planned, dispatched and validated work across the company's own repos. The doctrine was **"Claude Code codes · OpenClaw operates · the knowledge base decides."**
+I built it in 2026 to run development at **Bevox**, where it planned, dispatched and validated work across the company's own repos. The doctrine is **"Claude Code codes · OpenClaw operates · the knowledge base decides."**
 
 > **Status:** a prototype that ran in production for Bevox's internal operations. It sits on top of **[OpenClaw](https://openclaw.ai)**, the open-source self-hosted agent gateway, for Telegram, cron, agent sessions and plugins. OpenClaw itself is **not** part of this repo. Everything here is my own code, and it never patches the gateway core.
 
