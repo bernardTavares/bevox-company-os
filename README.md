@@ -18,7 +18,7 @@ I built it in 2026 to run development at **Bevox**, where it planned, dispatched
 
 > **Status:** a prototype that ran in production for Bevox's internal operations. It sits on top of **[OpenClaw](https://openclaw.ai)**, the open-source self-hosted agent gateway, for Telegram, cron, agent sessions and plugins. OpenClaw itself is **not** part of this repo. Everything here is my own code, and it never patches the gateway core.
 
-The read-side UI is a separate repo: **[bevox-mission-control](https://github.com/bernardTavares/bevox-mission-control)**.
+The read-side UI is a separate repo: **[bevox-mission-control](https://github.com/bernardTavares/bevox-mission-control)**. The OpenClaw configuration it ran on (gateway, agents, cron jobs, systemd units) is in **[bevox-openclaw-runtime](https://github.com/bernardTavares/bevox-openclaw-runtime)**.
 
 ## The loop
 
